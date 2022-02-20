@@ -1,0 +1,22 @@
+<div class="cards-container" fxFlex fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card *ngFor="let game of gamesList" (mouseenter)="showButton()">
+    <div *ngIf="getJackpotAmount(game.id)"
+         class="jackpot-text"
+         fxFlex fxLayoutAlign="center center">{{ getJackpotAmount(game.id) | currency : 'GBP' }}
+    </div>
+
+    <div class="ribbon" *ngIf="getRibbonText(game)">
+      <span>{{ getRibbonText(game) }}</span>
+    </div>
+
+    <div class="image-container"><img [src]="game.image" [alt]="game.name"></div>
+
+    <div class="game-title" fxLayoutAlign="center center">
+      <span>{{ game.name }}</span>
+<!--      <div class="centered"></div>-->
+    </div>
+
+    <button class="play-button" mat-raised-button>Play
+    </button>
+  </mat-card>
+</div>

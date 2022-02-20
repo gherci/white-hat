@@ -1,0 +1,107 @@
+@import 'src/styles/variables.scss';
+
+.cards-container {
+  margin-top: 32px;
+
+  .jackpot-text {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: $wh-white-1;
+    font-size: 16px;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  mat-card {
+    padding: 0;
+    margin: 16px;
+    border-radius: 8px;
+
+    .image-container {
+      width: 260px;
+      height: 154px;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
+    .play-button {
+      position: absolute;
+      bottom: 16px;
+      margin: 0 35%;
+      display: none;
+    }
+
+    .game-title {
+      position: absolute;
+      top: 50px;
+      color: $wh-white-1;
+      width: 100%;
+
+      span {
+        display: none;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+
+  mat-card:hover {
+    box-shadow: -1px 10px 29px 0px rgba(0, 0, 0, 0.8);
+
+    .play-button,
+    div span {
+      display: block;
+    }
+  }
+}
+
+.ribbon {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 8px 0;
+    background-color: $wh-green;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
+    color: $wh-white-1;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+    text-align: center;
+    left: -5px;
+    top: 20px;
+    transform: rotate(45deg);
+  }
+}
+
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid $wh-green-dark;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+.ribbon::before {
+  top: 0;
+  left: 45px;
+}
+
+.ribbon::after {
+  bottom: 45px;
+  right: 0;
+}
